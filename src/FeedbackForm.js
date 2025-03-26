@@ -18,7 +18,7 @@ const FeedbackForm = () => {
       return;
     }
 
-    try {
+    // try {
       const response = await axios.post('https://example.com/api/feedback', {
         name,
         phone,
@@ -27,7 +27,7 @@ const FeedbackForm = () => {
         rating,
       });
 
-      if (response.status === 200) {
+    //   if (response.status === 200) {
         setSuccess(true);
         window.Telegram.WebApp.close();
         window.Telegram.WebApp.MainButton.text = 'Thank you!';
@@ -35,10 +35,10 @@ const FeedbackForm = () => {
         setTimeout(() => {
           window.Telegram.WebApp.MainButton.hide();
         }, 3000);
-      }
-    } catch (err) {
-      setError('Failed to send feedback. Please try again.');
-    }
+    //   }
+    // } catch (err) {
+    //   setError('Failed to send feedback. Please try again.');
+    // }
   };
 
   return (
